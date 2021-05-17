@@ -29,12 +29,12 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/" id="homeNav">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="/dashboard" id="dashboardNav">Dashboard</a></li>
           {{#if loggedIn}}
-          <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
-          <li class="nav-item"><a class="nav-link" href="/" id="logout">Logout</a></li>
+          <li class="nav-item"><a class="nav-link" href="/" id="logoutNav">Logout</a></li>
           {{else}}
-          <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login" id="loginNav">Login</a></li>
           {{/if}}
         </ul>
       </div>
@@ -47,7 +47,7 @@
   <!-- Footer -->
   <footer class="footer mt-auto py-3 bg-light text-center">
     <div class="container">
-      <i class="fab fa-github"></i><a href="https://github.com/luiscabrera77/tech-blog" class="mx-2">luiscabrera77</a>
+      <i class="fab fa-github"></i><a href="https://github.com/luiscabrera77/tech-blog" target="_blank" class="mx-2">luiscabrera77</a>
     </div>
   </footer>
   {{#if loggedIn}}
