@@ -10,7 +10,7 @@ var secondsLeft = 60;
 function startTimer() {
   interval = setInterval(function () {
     secondsLeft--;
-    console.log(secondsLeft);
+    //console.log(secondsLeft);
     if (secondsLeft <= 0) {
       document.location.replace('/');
     }
