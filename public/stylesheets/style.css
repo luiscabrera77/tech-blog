@@ -1,3 +1,11 @@
+a {
+  color:#0044C4;
+}
+
+a :hover{
+  color:#0E6FFD;
+}
+
 .logo {
   font-size: 1em;
   font-family: 'Playfair Display SC', serif;

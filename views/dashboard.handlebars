@@ -1,34 +1,32 @@
 <div class="container-fluid mt-3">
-  <h3>Create New Post</h3>
-  <form class="new-post-form">
-  <div class="form-group blue-border">
-    <h5>Title</h5>
-    <input class="form-control" id="post-title" name="post-title" rows="1" aria-label="Title"/>
-    <h5 class="mt-2">Body</h5>
-    <textarea class="form-control" id="post-body" name="post-body" rows="5" aria-label="Textarea"></textarea>
-  </div>
-  <div class="col text-start mt-3">
-    <button class="btn btn-primary" type="submit">Submit</button>
-  </div>
-  </form>
-</div>
-{{#if posts.length}}
-<hr class="mt-3 mb-4"/>
-<div class="container-fluid mt-2">
-  <h3>Your Posts</h3>
-  <div class="row">
-    {{#each posts as |post|}}
-    <div class="col-4 mt-3 mb-2">
-      {{> post-info-edit post }}
+    <div class="row">
+      <div class="col">
+        <h3>Your Posts</h3>
+      </div>
+      <div class="col text-end">
+        <a href="/dashboard/new/" class="btn btn-success">New Post</a>
+      </div>
     </div>
-    {{/each}}
+    {{#if posts.length}}
+    <div class="row">
+      {{#each posts as |post|}}
+      <div class="col-4 mt-3 mb-2">
+        {{> post-info-edit post }}
+      </div>
+      {{/each}}
+    </div>
+  {{else}}
+  <div class="row mt-3">
+    <div class="col text-center">
+      <h5 class="text-info">You haven't written any posts yet!</h5>
+      <div class="text-center">
+        <img src="https://media.giphy.com/media/ZRLkV447Inaj2bJQmP/giphy.gif" class="rounded" alt="Do it now!">
+      </div>
+    </div>
   </div>
+  {{/if}}
 </div>
-{{/if}}
-
-<script>
-var btnActive = document.getElementById("dashboardNav");
-btnActive.className+= " active";
-</script>
-
-<script src="/javascript/add-post.js"></script>
+  <script>
+    var btnActive = document.getElementById("dashboardNav");
+    btnActive.className += " active";
+  </script>

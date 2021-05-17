@@ -3,6 +3,15 @@ async function newFormHandler(event) {
 
   const title = document.querySelector('input[name="post-title"]').value;
   const post_body = document.querySelector('textarea[name="post-body"]').value;
+  
+  if (title==""){
+    alert("You must enter a title");
+    return;
+  }
+  else if (post_body==""){
+    alert("Body cannot be empty");
+    return;
+  }
 
   const response = await fetch(`/api/posts`, {
     method: 'POST',

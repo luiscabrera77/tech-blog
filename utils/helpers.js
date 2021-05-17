@@ -13,5 +13,8 @@ module.exports = {
   },
   format_short: post_body => {
     return post_body.slice(0,100)+`...`;
+  },
+  format_title: post_title => {
+    return post_title.slice(0,27)+`...`;
   }
 }

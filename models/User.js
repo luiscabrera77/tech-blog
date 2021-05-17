@@ -27,18 +27,8 @@ User.init(
     // define a username column
     username: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    // define an email column
-    email: {
-      type: DataTypes.STRING,
       allowNull: false,
-      // there cannot be any duplicate email values in this table
-      unique: true,
-      // if allowNull is set to false, we can run our data through validators before creating the table data
-      validate: {
-        isEmail: true
-      }
+      unique: true
     },
     // define a password column
     password: {
@@ -51,17 +41,6 @@ User.init(
     }
   },
   {
-    // OLD STYLE CREATING 2 variables pre-hash and post-hash
-    // hooks: {
-    //   // set up beforeCreate lifecycle "hook" functionality
-    //   beforeCreate(userData) {
-    //     return bcrypt.hash(userData.password, 10).then(newUserData => {
-    //       return newUserData
-    //     });
-    //   }
-    // }
-
-    // now using async/wait syntax
     hooks: {
         // set up beforeCreate lifecycle "hook" functionality
         async beforeCreate(newUserData) {

@@ -1,0 +1,22 @@
+<div class="container-fluid mt-3">
+  <h3>Create New Post</h3>
+  <form class="new-post-form">
+  <div class="form-group blue-border">
+    <h5>Title</h5>
+    <input class="form-control" id="post-title" name="post-title" rows="1" aria-label="Title"/>
+    <h5 class="mt-2">Body</h5>
+    <textarea class="form-control" id="post-body" name="post-body" rows="5" aria-label="Textarea"></textarea>
+  </div>
+  <div class="col text-start mt-3">
+    <a class="btn btn-secondary" href="/dashboard" role="button">Cancel</a>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </div>
+  </form>
+</div>
+
+<script>
+var btnActive = document.getElementById("dashboardNav");
+btnActive.className+= " active";
+</script>
+
+<script src="/javascript/add-post.js"></script>
