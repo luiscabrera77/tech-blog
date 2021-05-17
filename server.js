@@ -8,9 +8,15 @@ const hbs = exphbs.create({ helpers });
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+var oneMin = 60000
+
 const sess = {
   secret: 'Super secret secret',
-  cookie: {},
+  rolling: true, // Force cookie to be set on every response, it will reset expiration to maxAge.
+  cookie: {
+    expires: new Date(Date.now() + oneMin),
+    maxAge: oneMin
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({

@@ -5,6 +5,15 @@ async function loginFormHandler(event) {
   const username = document.querySelector('#username-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
 
+  if (username==""){
+    alert("You must enter a username");
+    return;
+  }
+  else if (password==""){
+    alert("Password cannot be empty");
+    return;
+  }
+
   if (username && password) {
     const response = await fetch('/api/users/login', {
       method: 'post',
@@ -31,6 +40,15 @@ async function signupFormHandler(event) {
 
   const username = document.querySelector('#username-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+
+  if (username==""){
+    alert("You must enter a username");
+    return;
+  }
+  else if (password.length < 4){
+    alert("Password must be at least 4 characters");
+    return;
+  }
 
   if (username && password) {
     const response = await fetch('/api/users', {
