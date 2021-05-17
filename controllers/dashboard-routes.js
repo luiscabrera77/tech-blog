@@ -31,9 +31,16 @@ router.get('/', withAuth, (req, res) => {
     ]
   })
     .then(dbPostData => {
-      // serialize data before passing to template
+      User.findOne({
+        attributes: { exclude: ['password'] },
+        where: {
+          id: req.session.user_id
+        }
+      })
+      .then(user => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      res.render('dashboard', { posts, username:user.username, loggedIn: true });
+      })      
     })
     .catch(err => {
       console.log(err);
