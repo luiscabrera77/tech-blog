@@ -1,4 +1,4 @@
-<section>
+<div class="container-fluid">
   <h2>Create New Post</h2>
 
   <form class="new-post-form">
@@ -7,25 +7,22 @@
       <input type="text" id="post-title" name="post-title" />
     </div>
     <div>
-      <label for="post-url">Link</label>
-      <input id="post-url" name="post-url" />
+      <label for="post-body">Body</label>
+      <textarea id="post-body" name="post-body" type="text"/></textarea>
     </div>
     <button type="submit" class="btn">Create</button>
   </form>
-</section>
+</div>
 
 {{#if posts.length}}
-<section>
+<div class="container-fluid"></div>
   <h2>Your Posts</h2>
-  <ol>
+  <div class="row">
     {{#each posts as |post|}}
-    <li>
-      {{> post-info post}}
-      <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
-    </li>
+      {{> post-info-edit post }}
     {{/each}}
-  </ol>
-</section>
+  </div>
+</div>
 {{/if}}
 
 <script src="/javascript/add-post.js"></script>

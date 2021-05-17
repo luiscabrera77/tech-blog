@@ -16,13 +16,22 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false
     },
-    post_url: {
+    // define a body column for the text
+    post_body: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        isURL: true
+        // must be at least one character long
+        len: [1]
       }
     },
+    // post_url: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   validate: {
+    //     isURL: true
+    //   }
+    // },
     user_id: {
       type: DataTypes.INTEGER,
       references: {
