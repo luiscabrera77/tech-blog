@@ -101,7 +101,6 @@ router.post('/login', (req, res) => {
   });
 });
 
-
 // PUT /api/users/1
 router.put('/:id', (req, res) => {
   // pass in req.body instead to only update what's passed through

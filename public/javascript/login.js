@@ -44,7 +44,7 @@ async function signupFormHandler(event) {
 
     // check the response status
     if (response.ok) {
-      console.log('success');
+      document.location.replace('/');
     } else {
       alert(response.statusText);
     }
@@ -52,3 +52,27 @@ async function signupFormHandler(event) {
 }
 
 document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+
+// SOW HIDE FORMS
+var loginForm = document.querySelector("#loginForm"); 
+var signupForm = document.querySelector("#signupForm"); 
+var createBtn = document.querySelector("#createBtn"); 
+var loginBtn = document.querySelector("#loginBtn");
+
+signupForm.hidden = true;
+loginBtn.hidden = true;
+
+//When the buttons are clicked... 
+createBtn.addEventListener("click", function () {
+  signupForm.hidden = false;
+  loginBtn.hidden = false;
+  loginForm.hidden = true;
+  createBtn.hidden = true;
+})
+
+loginBtn.addEventListener("click", function () {
+  signupForm.hidden = true;
+  loginBtn.hidden = true;
+  loginForm.hidden = false;
+  createBtn.hidden = false;
+})
