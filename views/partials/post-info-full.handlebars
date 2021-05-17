@@ -1,0 +1,8 @@
+<div class="card mt-3" style="border: 0">
+  <div class="card-body">
+    <h3 class="card-title">{{title}}</h3>
+    <h6 class="card-subtitle mb-2 text-muted">by {{user.username}} on {{format_date created_at}}</h6>
+    <p class="card-text">{{post_body}}</p>
+    <h5>{{comments.length}} {{format_plural "comment" comments.length}}</h5>
+  </div>
+</div>

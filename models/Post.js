@@ -18,7 +18,7 @@ Post.init(
     },
     // define a body column for the text
     post_body: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       allowNull: false,
       validate: {
         // must be at least one character long

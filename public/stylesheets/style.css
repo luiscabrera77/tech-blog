@@ -16,3 +16,16 @@
       margin-left: -80px;
   }
 }
+
+.blue-border textarea {
+  border: 1px solid #1775f9;
+}
+
+.blue-border input {
+  border: 1px solid #1775f9;
+}
+
+.blue-border .form-control:focus {
+  border: 1px solid #1775f9;
+  box-shadow: 0 0 0 0.2rem rgba(69, 132, 240, 0.25);
+}
